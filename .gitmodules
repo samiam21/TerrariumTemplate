@@ -1,0 +1,13 @@
+  
+[submodule "libdaisy"]
+	path = lib/libdaisy
+	url = https://github.com/electro-smith/libDaisy
+	branch = master
+[submodule "DaisySP"]
+	path = lib/DaisySP
+	url = https://github.com/electro-smith/DaisySP
+	branch = master
+[submodule "DaisyEffects"]
+	path = lib/DaisyEffects
+	url = https://github.com/samiam21/DaisyEffects
+	branch = master
