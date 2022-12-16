@@ -1,5 +1,5 @@
 # Project Name
-TARGET = bypass
+TARGET = TerrariumTemplate
 
 # Enable debugging for J-Link
 DEBUG = 1
@@ -13,7 +13,7 @@ CPPFLAGS += -DHAL_PCD_MODULE_ENABLED
 
 # Sources
 # Sources
-CPP_SOURCES = src/bypass.cpp $(wildcard lib/Effects/*.cpp) $(wildcard lib/Inputs/*.cpp)
+CPP_SOURCES = src/TerrariumTemplate.cpp $(wildcard lib/Effects/*.cpp) $(wildcard lib/Inputs/*.cpp)
 
 # Library Locations
 LIBDAISY_DIR = lib/libdaisy
