@@ -7,19 +7,37 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer in, AudioHandle::Interle
 {
     for (size_t i = 0; i < size; i++)
     {
-        out[i] = boost.Process(in[i]);
+        // out[i] = boost.Process(in[i]);
+        out[i] = in[i] * level;
         // out[i + 1] = boost.Process(in[i + 1]);
     }
 }
 
 void InitializeControls()
 {
+    // Initialize the ADC
+    AdcChannelConfig adcConfig[MAX_KNOBS];
+    adcConfig[KNOB_1_CHN].InitSingle(hw->GetPin(effectPotPin1));
+    adcConfig[KNOB_2_CHN].InitSingle(hw->GetPin(effectPotPin2));
+    adcConfig[KNOB_3_CHN].InitSingle(hw->GetPin(effectPotPin3));
+    adcConfig[KNOB_4_CHN].InitSingle(hw->GetPin(effectPotPin4));
+    adcConfig[KNOB_5_CHN].InitSingle(hw->GetPin(effectPotPin5));
+    adcConfig[KNOB_6_CHN].InitSingle(hw->GetPin(effectPotPin6));
+    hw->adc.Init(adcConfig, MAX_KNOBS);
+    hw->adc.Start();
+
+    // TODO: Find a better way to do this?
+    // Give the ADC time to start up
+    System::Delay(500);
+
+    // Initialize the knobs
+    levelKnob.Init(hw, KNOB_1_CHN, level, 0.f, 20.f);
 }
 
 void InitializeEffects()
 {
     // Initialize the boost effect
-    boost.Setup(hw);
+    // boost.Setup(hw);
 }
 
 int main(void)
@@ -46,5 +64,10 @@ int main(void)
 
     while (1)
     {
+        // Knob 1 controls the boost level
+        if (levelKnob.SetNewValue(level))
+        {
+            debugPrintlnF(hw, "Updated the boost level to: %f", level);
+        }
     }
 }

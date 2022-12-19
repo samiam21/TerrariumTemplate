@@ -22,6 +22,18 @@
 #define KNOB_5_CHN 4
 #define KNOB_6_CHN 5
 
+// Pin Definitions - SPDT
+const int effectSPDT1Pin1 = 7;
+const int effectSPDT1Pin2 = 8;
+
+// Pin Definitions - POT
+const int effectPotPin1 = 16;
+const int effectPotPin2 = 17;
+const int effectPotPin3 = 18;
+const int effectPotPin4 = 19;
+const int effectPotPin5 = 20;
+const int effectPotPin6 = 21;
+
 #define PI_VAL 3.14159265
 
 /** Serial debug print macros **/
@@ -102,15 +114,5 @@
         if (ENABLE_DISPLAY)                             \
             display.WriteMessage(message, args);        \
     }
-
-// Pin Definitions - SPDT
-const int effectSPDT1Pin1 = 12;
-const int effectSPDT1Pin2 = 13;
-
-// Pin Definitions - POT
-const int effectPotPin1 = 21;
-const int effectPotPin2 = 22;
-const int effectPotPin3 = 23;
-const int effectPotPin4 = 24;
 
 #endif

@@ -14,6 +14,10 @@ DaisySeed *hw;
 // Declare the effects objects being used
 CleanBoost boost;
 
+// DEBUG
+Knob levelKnob;
+float level = 1.0f;
+
 /**
  * Audio callback to process each enabled effect
  */
