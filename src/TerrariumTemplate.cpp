@@ -14,9 +14,17 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer in, AudioHandle::Interle
 
 int main(void)
 {
+    // Initialize the hardware
     hw.Init();
-    hw.SetAudioBlockSize(4);
+
+    // Update the block size and sample rate to minimize noise
+    hw.SetAudioBlockSize(DAISY_BLOCKSIZE);
+    hw.SetAudioSampleRate(DAISY_SAMPLE_RATE);
+
+    // Start the audio processing
+    debugPrintln(hw, "Starting Audio");
     hw.StartAudio(AudioCallback);
+
     while (1)
     {
     }

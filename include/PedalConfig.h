@@ -19,30 +19,30 @@
 #define PI_VAL 3.14159265
 
 /** Serial debug print macros **/
-#define initDebugPrint(hw, pcBlock)                                                                    \
-    {                                                                                                  \
-        if (DEBUG)                                                                                     \
-            hw->StartLog(pcBlock); /* true == wait for PC: will block until a terminal is connected */ \
+#define initDebugPrint(hw, pcBlock)                                                                   \
+    {                                                                                                 \
+        if (DEBUG)                                                                                    \
+            hw.StartLog(pcBlock); /* true == wait for PC: will block until a terminal is connected */ \
     }
-#define debugPrintln(hw, msg)   \
-    {                           \
-        if (DEBUG)              \
-            hw->PrintLine(msg); \
+#define debugPrintln(hw, msg)  \
+    {                          \
+        if (DEBUG)             \
+            hw.PrintLine(msg); \
     }
 #define debugPrint(hw, msg) \
     {                       \
         if (DEBUG)          \
-            hw->Print(msg); \
+            hw.Print(msg);  \
     }
 #define debugPrintlnF(hw, msg, args...) \
     {                                   \
         if (DEBUG)                      \
-            hw->PrintLine(msg, args);   \
+            hw.PrintLine(msg, args);    \
     }
 #define debugPrintF(hw, msg, args...) \
     {                                 \
         if (DEBUG)                    \
-            hw->Print(msg, args);     \
+            hw.Print(msg, args);      \
     }
 
 // Pin Definitions - SPDT
