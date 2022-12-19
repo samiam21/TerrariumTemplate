@@ -6,7 +6,8 @@
         "${workspaceRoot}/**",
         "${workspaceRoot}/include/**",
         "${workspaceRoot}/lib/libdaisy/src/**",
-        "${workspaceRoot}/lib/DaisySP/**"
+        "${workspaceRoot}/lib/DaisySP/**",
+        "${workspaceRoot}/lib/DaisyEffects/**"
       ],
       "forcedInclude": ["${workspaceRoot}/lib/libdaisy/src/daisy_seed.h"],
       "defines": ["_DEBUG", "UNICODE", "_UNICODE"],

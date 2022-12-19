@@ -13,7 +13,7 @@ CPPFLAGS += -DHAL_PCD_MODULE_ENABLED
 
 # Sources
 # Sources
-CPP_SOURCES = src/TerrariumTemplate.cpp $(wildcard lib/Effects/*.cpp) $(wildcard lib/Inputs/*.cpp)
+CPP_SOURCES = src/TerrariumTemplate.cpp $(wildcard lib/DaisyEffects/*.cpp) $(wildcard lib/DaisyInputs/*.cpp)
 
 # Library Locations
 LIBDAISY_DIR = lib/libdaisy
