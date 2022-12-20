@@ -8,8 +8,11 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer in, AudioHandle::Interle
     for (size_t i = 0; i < size; i++)
     {
         // out[i] = boost.Process(in[i]);
-        out[i] = in[i] * level;
-        // out[i + 1] = boost.Process(in[i + 1]);
+        if (audioOn)
+        {
+            out[i] = in[i] * level;
+            // out[i + 1] = boost.Process(in[i + 1]);
+        }
     }
 }
 
@@ -32,6 +35,9 @@ void InitializeControls()
 
     // Initialize the knobs
     levelKnob.Init(hw, KNOB_1_CHN, level, 0.f, 20.f);
+
+    // Initialize the toggles
+    onOffToggle.Init(hw->GetPin(effectTogglePin2));
 }
 
 void InitializeEffects()
@@ -64,10 +70,13 @@ int main(void)
 
     while (1)
     {
-        // Knob 1 controls the boost level
+        // Knob controls the boost level
         if (levelKnob.SetNewValue(level))
         {
             debugPrintlnF(hw, "Updated the boost level to: %f", level);
         }
+
+        // Toggle controls audio output on or off
+        audioOn = onOffToggle.ReadToggle();
     }
 }

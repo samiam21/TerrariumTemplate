@@ -22,9 +22,11 @@
 #define KNOB_5_CHN 4
 #define KNOB_6_CHN 5
 
-// Pin Definitions - SPDT
-const int effectSPDT1Pin1 = 7;
-const int effectSPDT1Pin2 = 8;
+// Pin Definitions - Toggle
+const int effectTogglePin1 = 10;
+const int effectTogglePin2 = 9;
+const int effectTogglePin3 = 8;
+const int effectTogglePin4 = 7;
 
 // Pin Definitions - POT
 const int effectPotPin1 = 16;
@@ -33,6 +35,10 @@ const int effectPotPin3 = 18;
 const int effectPotPin4 = 19;
 const int effectPotPin5 = 20;
 const int effectPotPin6 = 21;
+
+// Pin Definitions - SPDT (unused by Terrarium)
+const int effectSPDT1Pin1 = -1;
+const int effectSPDT1Pin2 = -1;
 
 #define PI_VAL 3.14159265
 

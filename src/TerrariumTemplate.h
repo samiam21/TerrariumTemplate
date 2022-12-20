@@ -2,6 +2,8 @@
 #define TERR_TEMPLATE_H
 
 #include "../include/PedalConfig.h"
+#include "../lib/DaisyInputs/Knob.h"
+#include "../lib/DaisyInputs/SimpleToggle.h"
 #include "../lib/DaisyEffects/CleanBoost.h"
 
 // Use the daisy namespace to prevent having to type
@@ -17,6 +19,8 @@ CleanBoost boost;
 // DEBUG
 Knob levelKnob;
 float level = 1.0f;
+SimpleToggle onOffToggle;
+bool audioOn = true;
 
 /**
  * Audio callback to process each enabled effect
