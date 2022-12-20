@@ -13,6 +13,10 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer in, AudioHandle::Interle
             out[i] = in[i] * level;
             // out[i + 1] = boost.Process(in[i + 1]);
         }
+        else
+        {
+            out[i] = 0;
+        }
     }
 }
 
@@ -37,7 +41,7 @@ void InitializeControls()
     levelKnob.Init(hw, KNOB_1_CHN, level, 0.f, 20.f);
 
     // Initialize the toggles
-    onOffToggle.Init(hw->GetPin(effectTogglePin2));
+    onOffToggle.Init(hw->GetPin(effectTogglePin3));
 }
 
 void InitializeEffects()
