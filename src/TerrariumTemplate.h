@@ -16,12 +16,6 @@ DaisySeed *hw;
 // Declare the effects objects being used
 CleanBoost boost;
 
-// DEBUG
-Knob levelKnob;
-float level = 1.0f;
-SimpleToggle onOffToggle;
-bool audioOn = true;
-
 /**
  * Audio callback to process each enabled effect
  */
