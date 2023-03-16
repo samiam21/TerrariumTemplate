@@ -3,12 +3,12 @@
 /**
  * Audio callback to process each enabled effect
  */
-void AudioCallback(AudioHandle::InterleavingInputBuffer in, AudioHandle::InterleavingOutputBuffer out, size_t size)
+void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
     for (size_t i = 0; i < size; i++)
     {
         // Process the effect audio
-        out[i] = boost.Process(in[i]);
+        out[0][i] = boost.Process(in[0][i]);
     }
 }
 
