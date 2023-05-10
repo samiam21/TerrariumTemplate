@@ -30,7 +30,7 @@ void InitializeControls()
     System::Delay(500);
 
     // Initialize the effect knobs
-    boost.ConfigureKnobPositions(KNOB_2_CHN);
+    boost.ConfigureKnobPositions(KNOB_1_CHN);
 
     // Initialize the effect toggles
     boost.ConfigureTogglePositions(effectTogglePin2);

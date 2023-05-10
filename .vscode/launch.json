@@ -12,7 +12,6 @@
             "device": "STM32H750XB",
             "interface": "jtag",
             "preLaunchTask": "build",
-            "runToMain": true,
             "svdFile": "./.vscode/STM32H750x.svd",
             "showDevDebugOutput": "raw"
         }
